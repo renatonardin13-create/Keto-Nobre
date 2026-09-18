@@ -1,0 +1,24 @@
+{
+  "name": "KetoNobre - Receitas que Transformam",
+  "short_name": "KetoNobre",
+  "description": "Aplicativo premium de receitas cetogênicas, planejamento semanal, lista de compras inteligente e modo cozinheiro.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F7F1",
+  "theme_color": "#123D24",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

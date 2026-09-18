@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="116" fill="#123D24"/>
+  <!-- Cloche / Plate base line -->
+  <path d="M 116 380 L 396 380" stroke="#63B532" stroke-width="20" stroke-linecap="round"/>
+  <!-- Chef Hat Base Band -->
+  <rect x="156" y="300" width="200" height="42" rx="21" fill="#A8D94D"/>
+  <!-- Chef Hat Dome with 3 plumes -->
+  <path d="M 166 300 C 134 250, 160 180, 204 190 C 224 144, 288 144, 308 190 C 352 180, 378 250, 346 300 Z" fill="#FFFFFF"/>
+  <!-- Organic Noble Leaf Accent -->
+  <path d="M 256 122 C 304 112, 336 150, 330 192 C 294 198, 256 170, 256 122 Z" fill="#63B532"/>
+  <path d="M 256 122 Q 298 166, 330 192" stroke="#123D24" stroke-width="6" stroke-linecap="round"/>
+  <!-- Sparkle of Excellence -->
+  <path d="M 380 120 L 388 142 L 410 150 L 388 158 L 380 180 L 372 158 L 350 150 L 372 142 Z" fill="#A8D94D"/>
+</svg>

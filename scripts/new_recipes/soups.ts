@@ -1,0 +1,330 @@
+import { Recipe } from '../../src/types';
+
+export const NEW_SOUPS_RECIPES: Recipe[] = [
+  {
+    id: "kn-soups-551",
+    title: "Creme Dourado de Abóbora Cabotiá com Leite de Coco, Gengibre e Frango Desfiado",
+    description: "Creme aveludado e reconfortante com o toque picante do gengibre fresco, leite de coco espesso e peito de frango macio desfiado.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "cremes",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 12,
+    cookTime: 20,
+    servings: 3,
+    rating: 4.9,
+    reviewCount: 43,
+    isPremium: false,
+    isPopular: true,
+    isNew: true,
+    tags: ["sopa", "abóbora cabotiá", "gengibre", "leite de coco", "conforto"],
+    nutrition: { calories: 340, protein: 28, netCarbs: 5, fat: 22, fiber: 2, carbs: 7 },
+    ingredients: [
+      { id: "kn-so551-1", name: "Abóbora cabotiá cozida e descascada", amount: "400 g", quantity: 400, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so551-2", name: "Peito de frango cozido e desfiado", amount: "250 g", quantity: 250, unit: "g", optional: false, category: "Proteínas" },
+      { id: "kn-so551-3", name: "Leite de coco integral cremoso", amount: "150 ml", quantity: 150, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so551-4", name: "Caldo de frango caseiro natural", amount: "300 ml", quantity: 300, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so551-5", name: "Gengibre ralado fresco", amount: "1 colher de sopa", quantity: 10, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-so551-6", name: "Azeite de oliva e coentro picado", amount: "1 colher de sopa", quantity: 15, unit: "ml", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Bater a base: No liquidificador, bata a abóbora cabotiá cozida com o caldo de frango e o leite de coco até formar um creme fino.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Refogar o gengibre: Na panela com azeite, refogue o gengibre e alho por 1 minuto até liberar o aroma.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Apurar o creme: Despeje o creme batido na panela, junte o frango desfiado e deixe ferver suavemente por 6 minutos mexendo para incorporar.", timerSeconds: 360 },
+      { stepNumber: 4, instruction: "Servir: Distribua em tigelas fundas e finalize com sementes de abóbora tostadas e coentro fresco." }
+    ],
+    chefTip: "O gengibre ralado fresco acelera o metabolismo e equilibra o sabor adocicado natural da abóbora cabotiá."
+  },
+  {
+    id: "kn-soups-552",
+    title: "Caldo Verde Nobre com Couve Fininha, Linguiça Artesanal e Base de Couve-Flor",
+    description: "Versão cetogênica do caldo verde português clássico, substituindo a batata por couve-flor aveludada e paio artesanal fatiado.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "caldos",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 12,
+    cookTime: 18,
+    servings: 4,
+    rating: 5.0,
+    reviewCount: 57,
+    isPremium: false,
+    tags: ["caldo verde", "linguiça", "couve", "couve-flor", "português"],
+    nutrition: { calories: 360, protein: 22, netCarbs: 3, fat: 28, fiber: 3, carbs: 6 },
+    ingredients: [
+      { id: "kn-so552-1", name: "Couve-flor fresca em pedaços", amount: "600 g", quantity: 600, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so552-2", name: "Couve manteiga fatiada em tiras ultrafinas", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so552-3", name: "Linguiça portuguesa ou paio artesanal em rodelas", amount: "200 g", quantity: 200, unit: "g", optional: false, category: "Carnes" },
+      { id: "kn-so552-4", name: "Azeite de oliva extravirgem", amount: "3 colheres de sopa", quantity: 45, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so552-5", name: "Dentes de alho picados e louro", amount: "3 dentes", quantity: 15, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Cozinhar a couve-flor: Cozinhe a couve-flor em água temperada com sal e folha de louro até ficar bem macia por 12 minutos.", timerSeconds: 720 },
+      { stepNumber: 2, instruction: "Transformar em caldo: Bata a couve-flor com parte da própria água do cozimento no liquidificador até virar um caldo cremoso e liso.", timerSeconds: 120 },
+      { stepNumber: 3, instruction: "Dourar a linguiça: Na panela, doure as rodelas de linguiça no azeite com o alho até ficarem crocantes.", timerSeconds: 240 },
+      { stepNumber: 4, instruction: "Unir e cozinhar a couve: Despeje o caldo de couve-flor sobre a linguiça, deixe levantar fervura, desligue o fogo e adicione a couve fresca, que cozinhará apenas no calor residual mantendo o verde vivo." }
+    ],
+    chefTip: "Colocar a couve após desligar o fogo mantém a cor esmeralda brilhante e evita que as folhas fiquem amareladas."
+  },
+  {
+    id: "kn-soups-553",
+    title: "Creme de Cogumelos Paris e Portobello Frescos com Vinho Branco e Nata Gaúcha",
+    description: "Sopa aveludada e perfumada com mix de cogumelos frescos tostados na manteiga, deglaceados no vinho e enriquecidos com nata.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "cremes",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Médio",
+    prepTime: 10,
+    cookTime: 15,
+    servings: 3,
+    rating: 4.9,
+    reviewCount: 39,
+    isPremium: true,
+    tags: ["cogumelos", "nata", "vinho branco", "creme", "inverno"],
+    nutrition: { calories: 310, protein: 7, netCarbs: 3, fat: 30, fiber: 2, carbs: 5 },
+    ingredients: [
+      { id: "kn-so553-1", name: "Cogumelos frescos (paris e portobello fatiados)", amount: "400 g", quantity: 400, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so553-2", name: "Manteiga sem sal", amount: "30 g", quantity: 30, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-so553-3", name: "Nata pura fresca", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-so553-4", name: "Vinho branco seco de boa qualidade", amount: "50 ml", quantity: 50, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so553-5", name: "Caldo de legumes ou frango caseiro", amount: "250 ml", quantity: 250, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so553-6", name: "Folhas frescas de tomilho e alho", amount: "1 colher de chá", quantity: 5, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Dourar os cogumelos: Na panela quente, derreta a manteiga e doure os cogumelos com o tomilho por 6 minutos até liberarem água e dourarem intensamente.", timerSeconds: 360, tip: "Reserve 3 colheres de cogumelos dourados para decorar os pratos." },
+      { stepNumber: 2, instruction: "Deglacear: Verta o vinho branco e deixe evaporar por 2 minutos.", timerSeconds: 120 },
+      { stepNumber: 3, instruction: "Caldo e nata: Adicione o caldo caseiro e a nata. Deixe ferver por 4 minutos.", timerSeconds: 240 },
+      { stepNumber: 4, instruction: "Triturar: Use um mixer de mão para triturar até atingir cremosidade acetinada. Sirva com os cogumelos reservados no topo." }
+    ],
+    chefTip: "Tostar bem os cogumelos antes de adicionar os líquidos é a chave para a intensidade do sabor umami no caldo."
+  },
+  {
+    id: "kn-soups-554",
+    title: "Caldo de Ossos Bovinos Concentrado com Cúrcuma, Pimenta Preta e Alecrim",
+    description: "Extrato líquido rico em colágeno natural, cozido lentamente por 18 horas para reparação intestinal e saciedade profunda.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "caldos funcionais",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 15,
+    cookTime: 180,
+    servings: 6,
+    rating: 5.0,
+    reviewCount: 62,
+    isPremium: true,
+    tags: ["caldo de ossos", "colágeno", "jejum intermitente", "saúde intestinal", "anti-inflamatório"],
+    nutrition: { calories: 120, protein: 18, netCarbs: 0, fat: 5, fiber: 0, carbs: 0 },
+    ingredients: [
+      { id: "kn-so554-1", name: "Ossos bovinos ricos em tutano e cartilagem", amount: "1,5 kg", quantity: 1500, unit: "g", optional: false, category: "Carnes" },
+      { id: "kn-so554-2", name: "Vinagre de maçã não filtrado", amount: "3 colheres de sopa", quantity: 45, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so554-3", name: "Cúrcuma pura em pó e pimenta preta em grãos", amount: "1 colher de sopa", quantity: 10, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-so554-4", name: "Ramos de alecrim fresco e folhas de louro", amount: "4 unidades", quantity: 5, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-so554-5", name: "Água filtrada", amount: "3 litros", quantity: 3000, unit: "ml", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Tostar os ossos: Asse os ossos no forno a 200°C por 30 minutos para dourar e aprofundar o sabor.", timerSeconds: 1800 },
+      { stepNumber: 2, instruction: "Panela e vinagre: Coloque os ossos na panela de pressão ou slow cooker, cubra com água e adicione o vinagre de maçã.", timerSeconds: 180, tip: "O vinagre de maçã é fundamental para extrair os minerais e o colágeno dos ossos." },
+      { stepNumber: 3, instruction: "Cozimento lento: Cozinhe na pressão por 2 horas e meia ou em fogo baixo tradicional por 8 a 12 horas.", timerSeconds: 9000 },
+      { stepNumber: 4, instruction: "Coar e gelar: Coe em peneira fina. Ao esfriar na geladeira, o caldo assumirá consistência de gelatina pura rica em colágeno." }
+    ],
+    chefTip: "Quando gelado na geladeira, o caldo deve virar uma gelatina firme; isso comprova a altíssima concentração de colágeno puro."
+  },
+  {
+    id: "kn-soups-555",
+    title: "Canja Nobre Cetogênica com Arroz de Couve-Flor, Cenoura em Cubinhos e Frango Desfiado",
+    description: "Canja reconfortante de vó em versão 100% low carb, aromática com salsinha fresca, peito de frango e 'arroz' de couve-flor.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "caldos",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 10,
+    cookTime: 15,
+    servings: 3,
+    rating: 4.8,
+    reviewCount: 41,
+    isPremium: false,
+    tags: ["canja", "frango", "arroz de couve-flor", "conforto", "leve"],
+    nutrition: { calories: 280, protein: 32, netCarbs: 3, fat: 14, fiber: 2, carbs: 5 },
+    ingredients: [
+      { id: "kn-so555-1", name: "Couve-flor triturada em grãos de arroz", amount: "300 g", quantity: 300, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so555-2", name: "Peito de frango cozido e desfiado", amount: "300 g", quantity: 300, unit: "g", optional: false, category: "Proteínas" },
+      { id: "kn-so555-3", name: "Caldo de frango caseiro aromático", amount: "800 ml", quantity: 800, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so555-4", name: "Cenoura cortada em cubinhos minúsculos", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so555-5", name: "Azeite de oliva e salsinha picada abundante", amount: "2 colheres de sopa", quantity: 30, unit: "ml", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Ferver o caldo: Em panela média, aqueça o caldo de frango com os cubinhos de cenoura por 5 minutos até amaciarem.", timerSeconds: 300 },
+      { stepNumber: 2, instruction: "Adicionar o frango: Junte o frango desfiado temperado com sal e pimenta branca.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Arroz de couve-flor: Adicione a couve-flor triturada e cozinhe por apenas 3 minutos para ficar tenra sem empapar.", timerSeconds: 180 },
+      { stepNumber: 4, instruction: "Finalizar: Desligue e incorpore a salsinha picada e um fio generoso de azeite extravirgem." }
+    ],
+    chefTip: "Cozinhe o arroz de couve-flor por apenas 3 minutos; ele absorve o caldo do frango perfeitamente mantendo grãos soltinhos."
+  },
+  {
+    id: "kn-soups-556",
+    title: "Creme de Espinafre com Queijo Brie e Toque de Alho Confitado",
+    description: "Sopa esmeralda rica e sedosa feita com folhas frescas de espinafre, nata fresca e queijo brie francês derretido.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "cremes",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 8,
+    cookTime: 12,
+    servings: 2,
+    rating: 4.9,
+    reviewCount: 36,
+    isPremium: true,
+    tags: ["espinafre", "queijo brie", "creme", "ferro", "elegante"],
+    nutrition: { calories: 330, protein: 12, netCarbs: 2, fat: 30, fiber: 2, carbs: 4 },
+    ingredients: [
+      { id: "kn-so556-1", name: "Folhas de espinafre frescas limpas", amount: "300 g", quantity: 300, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so556-2", name: "Queijo brie picado sem casca dura", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-so556-3", name: "Nata fresca ou creme de leite fresco", amount: "120 ml", quantity: 120, unit: "ml", optional: false, category: "Laticínios" },
+      { id: "kn-so556-4", name: "Caldo de legumes caseiro", amount: "200 ml", quantity: 200, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so556-5", name: "Manteiga e alho laminado", amount: "1 colher de sopa", quantity: 15, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Murchar o espinafre: Na panela com manteiga, doure o alho e junte o espinafre por 2 minutos até reduzir de volume.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Adicionar líquidos: Despeje o caldo e a nata, cozinhando por 3 minutos.", timerSeconds: 180 },
+      { stepNumber: 3, instruction: "Bater com brie: Transfira para o liquidificador com os pedaços de queijo brie e bata até atingir um verde uniforme e cremoso.", timerSeconds: 90 },
+      { stepNumber: 4, instruction: "Servir: Volte à panela apenas para reaquecer e sirva com noz-moscada ralada." }
+    ],
+    chefTip: "Não deixe o espinafre ferver por muito tempo para preservar os compostos antioxidantes e a cor verde viva."
+  },
+  {
+    id: "kn-soups-557",
+    title: "Sopa Húngara Cetogênica de Carne com Páprica Nobre e Vegetais",
+    description: "Versão low carb do tradicional goulash com cubos macios de carne bovina, pimentões tostados e caldo espesso temperado com páprica.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "ensopados",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Médio",
+    prepTime: 15,
+    cookTime: 35,
+    servings: 3,
+    rating: 4.9,
+    reviewCount: 38,
+    isPremium: false,
+    tags: ["goulash", "páprica", "carne bovina", "ensopado", "inverno"],
+    nutrition: { calories: 420, protein: 42, netCarbs: 4, fat: 26, fiber: 2, carbs: 6 },
+    ingredients: [
+      { id: "kn-so557-1", name: "Músculo ou acém bovino cortado em cubos pequenos", amount: "500 g", quantity: 500, unit: "g", optional: false, category: "Carnes" },
+      { id: "kn-so557-2", name: "Páprica doce húngara nobre", amount: "2 colheres de sopa", quantity: 20, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-so557-3", name: "Pimentão vermelho e cebola em cubinhos", amount: "120 g", quantity: 120, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so557-4", name: "Tomate pelado picado sem açúcar", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-so557-5", name: "Caldo de carne caseiro", amount: "400 ml", quantity: 400, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so557-6", name: "Banha de porco ou azeite", amount: "2 colheres de sopa", quantity: 30, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Dourar a carne: Na panela de pressão, derreta a banha e sele os cubos de carne bovina até formarem fundo caramelizado.", timerSeconds: 360 },
+      { stepNumber: 2, instruction: "Refogar com páprica: Junte a cebola e o pimentão. Polvilhe a páprica e mexa por 1 minuto fora do fogo alto para a páprica não queimar.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Cozimento sob pressão: Adicione o tomate pelado e o caldo de carne. Tampe a panela de pressão e cozinhe por 25 minutos.", timerSeconds: 1500 },
+      { stepNumber: 4, instruction: "Finalizar o caldo: Abra a panela, reduza o caldo em fogo aberto por 5 minutos até ficar espesso e brilhante." }
+    ],
+    chefTip: "A páprica nunca deve fritar em óleo muito quente; retire a panela brevemente do calor ao adicionar o pó para preservar a doçura da especiaria."
+  },
+  {
+    id: "kn-soups-558",
+    title: "Creme de Tomate Rústico Assado com Manjericão e Queijo Feta Tostado",
+    description: "Tomates italianos assados no forno com dentes de alho inteiros, batidos até textura aveludada e coroados com queijo feta dourado.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "cremes",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 10,
+    cookTime: 25,
+    servings: 2,
+    rating: 4.8,
+    reviewCount: 33,
+    isPremium: true,
+    tags: ["tomate assado", "feta", "manjericão", "mediterrâneo", "creme"],
+    nutrition: { calories: 290, protein: 9, netCarbs: 5, fat: 25, fiber: 2, carbs: 7 },
+    ingredients: [
+      { id: "kn-so558-1", name: "Tomates italianos bem maduros cortados ao meio", amount: "500 g", quantity: 500, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so558-2", name: "Queijo feta de cabra em cubos", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-so558-3", name: "Azeite de oliva extravirgem", amount: "3 colheres de sopa", quantity: 45, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so558-4", name: "Dentes de alho com casca", amount: "4 unidades", quantity: 20, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-so558-5", name: "Folhas frescas de manjericão", amount: "1 punhado", quantity: 10, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Assar tomates e queijo: Em uma assadeira, disponha os tomates cortados, o alho e os cubos de queijo feta. Regue com azeite e asse a 200°C por 20 minutos até tostar.", timerSeconds: 1200 },
+      { stepNumber: 2, instruction: "Espremer o alho: Retire as cascas dos dentes de alho assados, que estarão cremosos como pasta.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Bater o creme: Transfira os tomates assados (com todo o suco da assadeira), o alho assado, o manjericão e metade do queijo para o liquidificador. Bata até ficar aveludado.", timerSeconds: 90 },
+      { stepNumber: 4, instruction: "Montar na cumbuca: Sirva o creme bem quente salpicado com o restante do feta tostado e folhas de manjericão." }
+    ],
+    chefTip: "Assar os tomates carameliza sua frutose natural, reduzindo a acidez sem necessidade de adicionar adoçantes artificiais."
+  },
+  {
+    id: "kn-soups-559",
+    title: "Creme de Aspargos Verdes com Queijo Parmesão e Raspas de Limão Siciliano",
+    description: "Elegante creme francês de aspargos tenros com nata fresca, queijo parmesão ralado na hora e perfume cítrico de limão siciliano.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "cremes",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 8,
+    cookTime: 12,
+    servings: 2,
+    rating: 4.9,
+    reviewCount: 30,
+    isPremium: true,
+    tags: ["aspargos", "parmesão", "limão siciliano", "gourmet", "elegante"],
+    nutrition: { calories: 270, protein: 11, netCarbs: 3, fat: 23, fiber: 3, carbs: 6 },
+    ingredients: [
+      { id: "kn-so559-1", name: "Aspargos verdes frescos (pontas e talos picados)", amount: "350 g", quantity: 350, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-so559-2", name: "Manteiga sem sal", amount: "25 g", quantity: 25, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-so559-3", name: "Nata fresca", amount: "100 ml", quantity: 100, unit: "ml", optional: false, category: "Laticínios" },
+      { id: "kn-so559-4", name: "Queijo parmesão ralado fino", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-so559-5", name: "Caldo de legumes caseiro", amount: "250 ml", quantity: 250, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so559-6", name: "Raspas de limão siciliano e flor de sal", amount: "1 pitada", quantity: 2, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Saltear os aspargos: Refogue os aspargos picados na manteiga por 4 minutos. Reserve as pontas dos aspargos para decorar.", timerSeconds: 240 },
+      { stepNumber: 2, instruction: "Cozinhar no caldo: Adicione o caldo de legumes e deixe ferver por 6 minutos até os talos ficarem muito macios.", timerSeconds: 360 },
+      { stepNumber: 3, instruction: "Processar o creme: Bata no liquidificador com a nata e o parmesão até virar um veludo verde claro.", timerSeconds: 90 },
+      { stepNumber: 4, instruction: "Apresentação: Despeje em pratos fundos, coloque as pontas de aspargos salteadas no centro e finalize com as raspas de limão siciliano." }
+    ],
+    chefTip: "Reservar as pontinhas intactas dá um visual profissional de restaurante estrelado ao prato."
+  },
+  {
+    id: "kn-soups-560",
+    title: "Sopa Cremosa de Frango com Bacon, Creme de Queijo e Pimentão Defumado",
+    description: "Sopa grossa de frango desfiado com cubos de bacon crocante, cream cheese derretido e caldo aromático de páprica e cebolinha.",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+    category: "soups",
+    subcategory: "cremes",
+    categoryName: "Sopas e Caldos",
+    difficulty: "Fácil",
+    prepTime: 10,
+    cookTime: 15,
+    servings: 3,
+    rating: 4.9,
+    reviewCount: 44,
+    isPremium: false,
+    tags: ["frango", "bacon", "cream cheese", "confort food", "quentinho"],
+    nutrition: { calories: 410, protein: 36, netCarbs: 3, fat: 28, fiber: 1, carbs: 4 },
+    ingredients: [
+      { id: "kn-so560-1", name: "Peito de frango cozido e desfiado", amount: "350 g", quantity: 350, unit: "g", optional: false, category: "Proteínas" },
+      { id: "kn-so560-2", name: "Bacon artesanal picado em cubos", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Carnes" },
+      { id: "kn-so560-3", name: "Cream cheese tradicional integral", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-so560-4", name: "Caldo de galinha caipira caseiro", amount: "500 ml", quantity: 500, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-so560-5", name: "Páprica defumada e cebolinha verde", amount: "1 colher de sopa", quantity: 10, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Dourar o bacon: Frite o bacon até dourar estaladiço. Retire e reserve.", timerSeconds: 240 },
+      { stepNumber: 2, instruction: "Aquecer o caldo: Na mesma panela, adicione o caldo de galinha e o frango desfiado com a páprica defumada.", timerSeconds: 180 },
+      { stepNumber: 3, instruction: "Fundir o cream cheese: Adicione o cream cheese e mexa com fouet em fogo baixo até derreter homogeneamente e encorpar o caldo.", timerSeconds: 180 },
+      { stepNumber: 4, instruction: "Servir com bacon: Sirva com o bacon crocante reservado por cima e muita cebolinha fresca." }
+    ],
+    chefTip: "O cream cheese derretido com o caldo quente atua como espessante cetogênico perfeito sem precisar de amido de milho ou farinha de trigo."
+  }
+];

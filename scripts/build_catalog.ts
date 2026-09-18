@@ -1,0 +1,354 @@
+import fs from 'fs';
+import path from 'path';
+import { Recipe, Ingredient, RecipeStep } from '../src/types';
+import { INITIAL_RECIPES } from '../src/data/recipes';
+
+// Helper to generate clean slugs
+function createSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+}
+
+// 100 new recipes definition
+export const NEW_100_RECIPES: Recipe[] = [
+  // ==========================================
+  // CAFÉ DA MANHÃ (10 recipes: 501 to 510)
+  // ==========================================
+  {
+    id: "kn-breakfast-501",
+    title: "Ovos Rancheiros Cetogênicos com Abacate e Queijo Coalho Dourado",
+    description: "Versão nobre e cetogênica dos clássicos huevos rancheros, servidos em frigideira quente com abacate fatiado e queijo coalho grelhado.",
+    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "ovos",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 5,
+    cookTime: 10,
+    servings: 2,
+    rating: 4.9,
+    reviewCount: 38,
+    isPremium: false,
+    isPopular: true,
+    isNew: true,
+    tags: ["ovos", "abacate", "queijo coalho", "café da manhã", "mexicano", "sem glúten"],
+    nutrition: { calories: 420, protein: 24, netCarbs: 3, fat: 34, fiber: 4, carbs: 7 },
+    ingredients: [
+      { id: "kn-b501-1", name: "Ovos caipiras", amount: "4 unidades", quantity: 4, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b501-2", name: "Queijo coalho em cubos", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b501-3", name: "Abacate maduro fatiado", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b501-4", name: "Tomate pelado picado sem sementes", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b501-5", name: "Manteiga de garrafa ou ghee", amount: "1 colher de sopa", quantity: 15, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-b501-6", name: "Coentro fresco picado e pimenta jalapeño", amount: "1 colher de sopa", quantity: 10, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Dourar o queijo: Em frigideira de ferro com a manteiga ghee, doure os cubos de queijo coalho por 3 minutos até formar crosta dourada.", timerSeconds: 180, tip: "Fogo médio garante crosta sem derreter completamente." },
+      { stepNumber: 2, instruction: "Preparar a base rústica: Adicione o tomate picado e a pimenta, cozinhando por 2 minutos para apurar o molho.", timerSeconds: 120 },
+      { stepNumber: 3, instruction: "Escalfar os ovos: Abra 4 cavidades e quebre os ovos delicadamente. Tampe a frigideira e cozinhe por 4 a 5 minutos até as claras firmarem e as gemas ficarem moles.", timerSeconds: 270, tip: "Gema mole cria molho aveludado espetacular." },
+      { stepNumber: 4, instruction: "Finalização nobre: Desligue o fogo, disponha as fatias de abacate fresco, salpique coentro picado e flor de sal." }
+    ],
+    chefTip: "Adicione as fatias de abacate apenas fora do fogo para preservar a cremosidade e não amargar com o calor residual."
+  },
+  {
+    id: "kn-breakfast-502",
+    title: "Panqueca Fofa de Farinha de Amêndoas com Calda de Mirtilos e Nata",
+    description: "Panquecas americanas altas e aeradas feitas com farinha de amêndoas nobres, servidas com calda morna de mirtilos frescos e nata batida.",
+    image: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "panquecas",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 8,
+    cookTime: 10,
+    servings: 2,
+    rating: 4.8,
+    reviewCount: 42,
+    isPremium: true,
+    isPopular: true,
+    tags: ["panqueca", "amêndoas", "mirtilos", "nata", "doce keto"],
+    nutrition: { calories: 360, protein: 16, netCarbs: 4, fat: 30, fiber: 4, carbs: 8 },
+    ingredients: [
+      { id: "kn-b502-1", name: "Farinha de amêndoas fina", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b502-2", name: "Ovos caipiras", amount: "2 unidades", quantity: 2, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b502-3", name: "Cream cheese amolecido", amount: "60 g", quantity: 60, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b502-4", name: "Adoçante eritritol", amount: "1 colher de sopa", quantity: 15, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b502-5", name: "Fermento químico em pó", amount: "1 colher de chá", quantity: 5, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b502-6", name: "Mirtilos frescos", amount: "50 g", quantity: 50, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b502-7", name: "Nata fresca pura", amount: "2 colheres de sopa", quantity: 30, unit: "g", optional: false, category: "Laticínios" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Bater a massa: No liquidificador ou mixer, bata os ovos, o cream cheese, a farinha de amêndoas e o eritritol até formar uma massa lisa e densa.", timerSeconds: 60 },
+      { stepNumber: 2, instruction: "Incorporar fermento: Misture o fermento delicadamente com uma espátula de silicone.", timerSeconds: 30 },
+      { stepNumber: 3, instruction: "Dourar as panquecas: Unte uma frigideira com manteiga e despeje pequenas conchas. Cozinhe por 2 minutos até surgirem bolhas na superfície, vire e doure por mais 1 minuto.", timerSeconds: 180, tip: "Fogo bem baixo evita que doure antes de cozinhar por dentro." },
+      { stepNumber: 4, instruction: "Calda de mirtilos: Em panelinha separada, aqueça os mirtilos com 1 colher de água e gotas de limão por 3 minutos até amolecerem.", timerSeconds: 180 },
+      { stepNumber: 5, instruction: "Montagem: Empilhe as panquecas, regue com a calda morna de mirtilos e finalize com uma generosa colherada de nata fresca." }
+    ],
+    chefTip: "O segredo para a textura fofa é não bater a massa após adicionar o fermento; misture delicadamente à mão."
+  },
+  {
+    id: "kn-breakfast-503",
+    title: "Muffins Salgados de Ovos Caipiras, Bacon em Cubos e Espinafre",
+    description: "Muffins práticos e suculentos assados no forno, perfeitos para meal prep e manhãs corridas com zero carboidratos líquidos.",
+    image: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "muffins",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 10,
+    cookTime: 18,
+    servings: 4,
+    rating: 4.7,
+    reviewCount: 31,
+    isPremium: false,
+    tags: ["muffins", "bacon", "espinafre", "meal prep", "ovos"],
+    nutrition: { calories: 280, protein: 20, netCarbs: 1, fat: 22, fiber: 1, carbs: 2 },
+    ingredients: [
+      { id: "kn-b503-1", name: "Ovos caipiras", amount: "6 unidades", quantity: 6, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b503-2", name: "Bacon artesanal em cubinhos", amount: "120 g", quantity: 120, unit: "g", optional: false, category: "Carnes" },
+      { id: "kn-b503-3", name: "Espinafre fresco picado", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b503-4", name: "Queijo muçarela ralado grosso", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b503-5", name: "Nata ou creme de leite", amount: "50 ml", quantity: 50, unit: "ml", optional: false, category: "Laticínios" },
+      { id: "kn-b503-6", name: "Sal rosa, noz-moscada e pimenta-do-reino", amount: "1 pitada", quantity: 2, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Dourar o bacon: Frite os cubos de bacon em frigideira seca até dourarem. Escorra o excesso de gordura e reserve.", timerSeconds: 300 },
+      { stepNumber: 2, instruction: "Murchar espinafre: Na mesma frigideira, refogue o espinafre picado por 1 minuto até perder o volume.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Bater a base: Numa tigela grande, bata os ovos com a nata, noz-moscada, sal e pimenta com um fouet até homogeneizar.", timerSeconds: 90 },
+      { stepNumber: 4, instruction: "Montar as forminhas: Distribua o bacon, o espinafre e o queijo em forminhas de silicone para muffin. Despeje a mistura de ovos por cima até 3/4 da altura.", timerSeconds: 120 },
+      { stepNumber: 5, instruction: "Assar: Leve ao forno pré-aquecido a 180°C por 18 minutos até crescerem dourados e firmes ao toque.", timerSeconds: 1080 }
+    ],
+    chefTip: "Deixe esfriar por 5 minutos antes de desenformar para que mantenham o formato perfeito e não esfarelem."
+  },
+  {
+    id: "kn-breakfast-504",
+    title: "Pãozinho Nuvem de Frigideira com Queijo Meia-Cura e Manteiga Ghee",
+    description: "Pão cetogênico de preparo instantâneo na frigideira, com casquinha crocante e miolo que desmancha na boca.",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "pães keto",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 4,
+    cookTime: 6,
+    servings: 1,
+    rating: 4.9,
+    reviewCount: 56,
+    isPremium: true,
+    tags: ["pão keto", "frigideira", "rápido", "queijo meia-cura"],
+    nutrition: { calories: 310, protein: 18, netCarbs: 2, fat: 26, fiber: 2, carbs: 4 },
+    ingredients: [
+      { id: "kn-b504-1", name: "Ovo caipira", amount: "1 unidade", quantity: 1, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b504-2", name: "Requeijão cremoso legítimo", amount: "1 colher de sopa cheia (30g)", quantity: 30, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b504-3", name: "Farinha de amêndoas", amount: "1 colher de sopa (15g)", quantity: 15, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b504-4", name: "Queijo meia-cura ralado", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b504-5", name: "Fermento em pó", amount: "1/2 colher de café", quantity: 3, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b504-6", name: "Manteiga ghee para dourar", amount: "1 colher de chá", quantity: 5, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Bater a massa: Bata o ovo e o requeijão com um garfo numa tigelinha até ficar completamente homogêneo e sem grumos.", timerSeconds: 60 },
+      { stepNumber: 2, instruction: "Secos e queijo: Adicione a farinha de amêndoas, metade do queijo meia-cura e o fermento, misturando delicadamente.", timerSeconds: 30 },
+      { stepNumber: 3, instruction: "Cozinhar na frigideira: Aqueça a frigideira untada com ghee em fogo baixíssimo. Despeje a massa e tampe por 3 minutos até firmar o fundo.", timerSeconds: 180 },
+      { stepNumber: 4, instruction: "Rechear e tostar: Coloque o restante do queijo por cima, dobre ao meio como um crepe e doure ambos os lados até o queijo derreter.", timerSeconds: 120 }
+    ],
+    chefTip: "Usar o fogo mais baixo do fogão e manter a frigideira sempre tampada permite que o pão cozinhe no vapor e cresça sem queimar o fundo."
+  },
+  {
+    id: "kn-breakfast-505",
+    title: "Bowl Cremoso de Chia com Leite de Amêndoas, Framboesas e Lascas de Coco",
+    description: "Pudim de chia aveludado preparado na véspera, servido com framboesas frescas, lascas tostadas de coco e sementes nobres.",
+    image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "bowls",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 5,
+    cookTime: 0,
+    servings: 1,
+    rating: 4.8,
+    reviewCount: 29,
+    isPremium: true,
+    tags: ["pudim de chia", "vegano", "ômega 3", "bowl", "antioxidante"],
+    nutrition: { calories: 290, protein: 9, netCarbs: 3, fat: 24, fiber: 9, carbs: 12 },
+    ingredients: [
+      { id: "kn-b505-1", name: "Sementes de chia nobres", amount: "3 colheres de sopa (35g)", quantity: 35, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b505-2", name: "Leite de amêndoas sem açúcar", amount: "180 ml", quantity: 180, unit: "ml", optional: false, category: "Laticínios" },
+      { id: "kn-b505-3", name: "Leite de coco integral", amount: "2 colheres de sopa (30ml)", quantity: 30, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-b505-4", name: "Extrato puro de baunilha", amount: "1/2 colher de café", quantity: 2, unit: "ml", optional: false, category: "Temperos" },
+      { id: "kn-b505-5", name: "Framboesas frescas", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b505-6", name: "Lascas de coco tostadas", amount: "15 g", quantity: 15, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Hidratação da chia: Numa taça ou pote de vidro, misture a chia, o leite de amêndoas, o leite de coco e a baunilha.", timerSeconds: 60 },
+      { stepNumber: 2, instruction: "Descanso inicial: Mexa com uma colher após 5 minutos para evitar que as sementes afundem e formem blocos.", timerSeconds: 300 },
+      { stepNumber: 3, instruction: "Refrigeração: Cubra e deixe gelar por pelo menos 4 horas (ou durante a noite) até obter consistência de pudim consistente." },
+      { stepNumber: 4, instruction: "Finalização: Sirva com as framboesas frescas por cima e as lascas crocantes de coco tostado." }
+    ],
+    chefTip: "Mexer o pudim 5 minutos após colocar os líquidos é o segredo infalível para evitar que a chia fique grudada no fundo do pote."
+  },
+  {
+    id: "kn-breakfast-506",
+    title: "Waffle Nobre de Farinha de Coco com Geleia de Morango Sem Açúcar",
+    description: "Waffle dourado e perfumado com textura crocante por fora e macia por dentro, acompanhado de geleia caseira rápida de morangos.",
+    image: "https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "waffles",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 8,
+    cookTime: 7,
+    servings: 2,
+    rating: 4.7,
+    reviewCount: 34,
+    isPremium: true,
+    tags: ["waffle", "coco", "morango", "doce keto"],
+    nutrition: { calories: 320, protein: 14, netCarbs: 3, fat: 26, fiber: 5, carbs: 8 },
+    ingredients: [
+      { id: "kn-b506-1", name: "Farinha de coco fina", amount: "30 g", quantity: 30, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b506-2", name: "Ovos caipiras", amount: "3 unidades", quantity: 3, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b506-3", name: "Manteiga derretida", amount: "25 g", quantity: 25, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b506-4", name: "Nata ou creme de leite", amount: "30 ml", quantity: 30, unit: "ml", optional: false, category: "Laticínios" },
+      { id: "kn-b506-5", name: "Eritritol em pó", amount: "1 colher de sopa", quantity: 15, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b506-6", name: "Morangos frescos picados", amount: "60 g", quantity: 60, unit: "g", optional: false, category: "Vegetais" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Bater a massa: Bata os ovos com a nata, manteiga derretida e eritritol. Adicione a farinha de coco e mexa bem. Deixe repousar 2 minutos para hidratar.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Assar na máquina de waffle: Aqueça e unte a máquina de waffle com manteiga. Despeje a massa e asse por 4 a 5 minutos até dourar intensamente.", timerSeconds: 300 },
+      { stepNumber: 3, instruction: "Geleia relâmpago: Em uma panelinha, cozinhe os morangos amassados com 1 colher de água e gotas de limão por 4 minutos até virar uma calda espessa.", timerSeconds: 240 },
+      { stepNumber: 4, instruction: "Servir: Sirva o waffle quente coberto com a geleia natural de morango." }
+    ],
+    chefTip: "A farinha de coco absorve muito líquido; respeite o repouso de 2 minutos antes de despejar na máquina de waffle."
+  },
+  {
+    id: "kn-breakfast-507",
+    title: "Creme Cetogênico de Abacate com Limão Siciliano, Hortelã e Chia",
+    description: "Creme refrescante e super nutritivo, rico em gorduras monoinsaturadas saudáveis para iniciar o dia com saciedade absoluta.",
+    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "cremes",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 5,
+    cookTime: 0,
+    servings: 1,
+    rating: 4.8,
+    reviewCount: 22,
+    isPremium: false,
+    tags: ["abacate", "limão siciliano", "creme", "saciedade", "vegano"],
+    nutrition: { calories: 340, protein: 5, netCarbs: 2, fat: 33, fiber: 7, carbs: 9 },
+    ingredients: [
+      { id: "kn-b507-1", name: "Abacate hass ou avocado maduro", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b507-2", name: "Suco de limão siciliano", amount: "2 colheres de sopa", quantity: 30, unit: "ml", optional: false, category: "Vegetais" },
+      { id: "kn-b507-3", name: "Leite de coco integral", amount: "50 ml", quantity: 50, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-b507-4", name: "Folhas de hortelã fresca", amount: "6 folhas", quantity: 3, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-b507-5", name: "Adoçante estévia ou eritritol", amount: "A gosto", quantity: 5, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b507-6", name: "Sementes de chia para polvilhar", amount: "1 colher de chá", quantity: 5, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Bater no mixer: Coloque a polpa do abacate, o suco de limão, o leite de coco, a hortelã e o adoçante no copo do mixer.", timerSeconds: 60 },
+      { stepNumber: 2, instruction: "Processar: Bata em velocidade alta até obter um creme sedoso, brilhante e sem pedaços.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Finalizar: Sirva imediatamente em taça fria, polvilhado com raspas de limão e sementes de chia." }
+    ],
+    chefTip: "O limão siciliano além de dar aroma cítrico sofisticado impede a oxidação natural do abacate, mantendo a cor verde viva."
+  },
+  {
+    id: "kn-breakfast-508",
+    title: "Cestinhas Crocantes de Parmesão Recheadas com Ovos Cremosos e Cebolinha",
+    description: "Cestinhas rendadas feitas apenas com queijo parmesão tostado no forno, preenchidas com ovos mexidos cremosos na manteiga.",
+    image: "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "ovos",
+    categoryName: "Café da Manhã",
+    difficulty: "Médio",
+    prepTime: 10,
+    cookTime: 10,
+    servings: 2,
+    rating: 5.0,
+    reviewCount: 47,
+    isPremium: true,
+    tags: ["parmesão", "gourmet", "ovos mexidos", "café da manhã"],
+    nutrition: { calories: 390, protein: 28, netCarbs: 1, fat: 31, fiber: 0, carbs: 1 },
+    ingredients: [
+      { id: "kn-b508-1", name: "Queijo parmesão ralado grosso", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b508-2", name: "Ovos caipiras", amount: "4 unidades", quantity: 4, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b508-3", name: "Manteiga ghee nobre", amount: "20 g", quantity: 20, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b508-4", name: "Nata fresca", amount: "1 colher de sopa", quantity: 15, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b508-5", name: "Ciboulette ou cebolinha francesa picada", amount: "2 colheres de sopa", quantity: 15, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Fazer as cestinhas: Espalhe 2 círculos de parmesão em assadeira antiaderente. Leve ao forno a 200°C por 5 minutos até derreter e dourar as bordas.", timerSeconds: 300 },
+      { stepNumber: 2, instruction: "Moldar no copo: Retire com espátula e molde imediatamente sobre o fundo de dois copos virados para baixo. Espere 2 minutos para endurecer em formato de cestinha.", timerSeconds: 120 },
+      { stepNumber: 3, instruction: "Ovos mexidos aveludados: Em fogo muito baixo, cozinhe os ovos com a manteiga ghee mexendo continuamente com espátula. Finalize com a nata e desligue antes de secar.", timerSeconds: 240, tip: "O fogo deve ser suave para textura de fondue de ovos." },
+      { stepNumber: 4, instruction: "Montar: Preencha as cestinhas crocantes com os ovos cremosos e cubra com a ciboulette picada." }
+    ],
+    chefTip: "Molde o disco de parmesão ainda quente nos copos; se esfriar na assadeira ele quebra ao tentar dobrar."
+  },
+  {
+    id: "kn-breakfast-509",
+    title: "Omelete de Forno Alta com Cogumelos Salteados, Tomilho e Queijo de Cabra",
+    description: "Frittata fofa e alta assada lentamente com cogumelos frescos na manteiga, queijo de cabra cremoso e tomilho colhido na hora.",
+    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "omeletes",
+    categoryName: "Café da Manhã",
+    difficulty: "Fácil",
+    prepTime: 10,
+    cookTime: 20,
+    servings: 3,
+    rating: 4.9,
+    reviewCount: 39,
+    isPremium: true,
+    tags: ["frittata", "cogumelos", "queijo de cabra", "forno", "brunch"],
+    nutrition: { calories: 310, protein: 21, netCarbs: 2, fat: 24, fiber: 1, carbs: 3 },
+    ingredients: [
+      { id: "kn-b509-1", name: "Ovos caipiras", amount: "6 unidades", quantity: 6, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b509-2", name: "Cogumelos paris e shimeji fatiados", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-b509-3", name: "Queijo de cabra tipo boursin ou chèvre", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b509-4", name: "Manteiga", amount: "20 g", quantity: 20, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b509-5", name: "Folhas de tomilho fresco", amount: "1 colher de chá", quantity: 3, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Saltear cogumelos: Em frigideira que possa ir ao forno, salteie os cogumelos na manteiga por 5 minutos até dourarem.", timerSeconds: 300 },
+      { stepNumber: 2, instruction: "Bater ovos: Bata os ovos com uma pitada de sal, pimenta-do-reino e as folhinhas de tomilho fresco.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Despejar e adicionar queijo: Despeje os ovos sobre os cogumelos na frigideira e distribua pedaços de queijo de cabra por cima.", timerSeconds: 60 },
+      { stepNumber: 4, instruction: "Assar no forno: Leve ao forno pré-aquecido a 190°C por 15 minutos até inflar e firmar no centro com superfície dourada.", timerSeconds: 900 }
+    ],
+    chefTip: "Não mexa nos cogumelos nos primeiros 2 minutos de frigideira para que eles dourem sem soltar água em excesso."
+  },
+  {
+    id: "kn-breakfast-510",
+    title: "Torrada Cetogênica de Pão de Amêndoas com Pasta de Queijo Feta e Ovos Pochê",
+    description: "Fatia tostada de pão de amêndoas coberta com queijo feta batido com azeite, ovo pochê de gema aveludada e sementes de gergelim.",
+    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80",
+    category: "breakfast",
+    subcategory: "pães keto",
+    categoryName: "Café da Manhã",
+    difficulty: "Médio",
+    prepTime: 8,
+    cookTime: 6,
+    servings: 1,
+    rating: 4.8,
+    reviewCount: 33,
+    isPremium: true,
+    tags: ["toast keto", "ovo pochê", "queijo feta", "gourmet"],
+    nutrition: { calories: 370, protein: 22, netCarbs: 3, fat: 30, fiber: 3, carbs: 6 },
+    ingredients: [
+      { id: "kn-b510-1", name: "Fatias de pão cetogênico de amêndoas", amount: "1 fatia grossa (40g)", quantity: 40, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-b510-2", name: "Ovo caipira fresco", amount: "1 unidade", quantity: 1, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-b510-3", name: "Queijo feta amassado com azeite", amount: "50 g", quantity: 50, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-b510-4", name: "Azeite de oliva extravirgem", amount: "1 colher de sopa", quantity: 15, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-b510-5", name: "Gergelim preto e flocos de pimenta calabresa", amount: "1 pitada", quantity: 2, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Tostar o pão: Toste a fatia de pão de amêndoas na frigideira com um fio de azeite até ficar bem crocante.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Pasta de feta: Amasse o queijo feta com o azeite e pimenta preta até virar uma pasta espalhável.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Fazer o ovo pochê: Em água fervente suave com 1 colher de vinagre, crie um redemoinho e despeje o ovo. Cozinhe por exatamente 3 minutos.", timerSeconds: 180, tip: "O vinagre ajuda a firmar a clara rapidamente ao redor da gema." },
+      { stepNumber: 4, instruction: "Montagem: Espalhe a pasta de feta sobre a torrada, acomode o ovo pochê no topo e finalize com gergelim preto e flor de sal." }
+    ],
+    chefTip: "Use ovos o mais frescos possível para o pochê; quanto mais fresco o ovo, mais coesa e redonda fica a clara."
+  }
+];

@@ -1,0 +1,6 @@
+{
+  "name": "KetoNobre",
+  "description": "Aplicativo premium de receitas cetogênicas, planejamento semanal de refeições, lista de compras inteligente e modo cozinheiro passo a passo.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

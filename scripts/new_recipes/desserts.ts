@@ -1,0 +1,332 @@
+import { Recipe } from '../../src/types';
+
+export const NEW_DESSERTS_RECIPES: Recipe[] = [
+  {
+    id: "kn-desserts-571",
+    title: "Mousse de Chocolate Belga 85% com Nata Batida e Raspas de Laranja",
+    description: "Sobremesa francesa aveludada e aerada, feita com chocolate nobre com alto teor de cacau, gemas caipiras e nata fresca batida.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "mousses",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Fácil",
+    prepTime: 12,
+    cookTime: 0,
+    servings: 4,
+    rating: 5.0,
+    reviewCount: 64,
+    isPremium: true,
+    isPopular: true,
+    isNew: true,
+    tags: ["mousse", "chocolate 85%", "nata", "zero açúcar", "sobremesa francesa"],
+    nutrition: { calories: 290, protein: 6, netCarbs: 3, fat: 28, fiber: 3, carbs: 6 },
+    ingredients: [
+      { id: "kn-de571-1", name: "Chocolate nobre 85% cacau picado", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de571-2", name: "Nata pura fresca gelada ou creme de leite fresco", amount: "200 g", quantity: 200, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de571-3", name: "Adoçante eritritol em pó fino ou xilitol", amount: "3 colheres de sopa", quantity: 35, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de571-4", name: "Claras de ovos batidas em neve firme", amount: "2 unidades", quantity: 2, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de571-5", name: "Extrato puro de baunilha e raspas de laranja", amount: "1 colher de chá", quantity: 5, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Derreter o chocolate: Derreta o chocolate em banho-maria brando ou no micro-ondas de 30 em 30 segundos mexendo sempre para não queimar.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Bater a nata: Em tigela gelada, bata a nata com o eritritol e a baunilha até ponto de chantilly suave.", timerSeconds: 180 },
+      { stepNumber: 3, instruction: "Incorporar com delicadeza: Misture o chocolate derretido morno ao chantilly. Em seguida, incorpore as claras em neve em movimentos circulares de baixo para cima mantendo o ar.", timerSeconds: 120 },
+      { stepNumber: 4, instruction: "Gelar e servir: Distribua em taças de cristal e leve à geladeira por 2 horas. Finalize com raspas finas de laranja bahia." }
+    ],
+    chefTip: "O chocolate deve estar morno (não quente) ao entrar no chantilly para não derreter a gordura da nata."
+  },
+  {
+    id: "kn-desserts-572",
+    title: "Pudim de Leite Condensado Cetogênico com Calda Caramelizada no Alulose",
+    description: "Textura sedosa impecável sem furinhos, feito com leite condensado fake de nata e alulose que carameliza exatamente como açúcar.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "pudins",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 15,
+    cookTime: 50,
+    servings: 6,
+    rating: 5.0,
+    reviewCount: 78,
+    isPremium: true,
+    tags: ["pudim", "leite condensado fake", "alulose", "caramelo", "clássico brasileiro"],
+    nutrition: { calories: 280, protein: 7, netCarbs: 2, fat: 27, fiber: 0, carbs: 2 },
+    ingredients: [
+      { id: "kn-de572-1", name: "Alulose ou xilitol para a calda de caramelo", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de572-2", name: "Nata pura fresca ou creme de leite", amount: "300 g", quantity: 300, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de572-3", name: "Leite de coco integral cremoso", amount: "150 ml", quantity: 150, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-de572-4", name: "Ovos caipiras inteiros mais 2 gemas", amount: "4 unidades", quantity: 4, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de572-5", name: "Adoçante eritritol para o pudim", amount: "4 colheres de sopa", quantity: 50, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de572-6", name: "Extrato de baunilha legítimo", amount: "1 colher de chá", quantity: 5, unit: "ml", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Caramelizar a forma: Na própria forma de pudim com furo central, derreta o alulose em fogo brando até virar um caramelo dourado brilhante. Espalhe pelas laterais e reserve.", timerSeconds: 300 },
+      { stepNumber: 2, instruction: "Bater o creme: No liquidificador ou com fouet, misture a nata, o leite de coco, os ovos, as gemas, a baunilha e o eritritol até ficar liso.", timerSeconds: 120 },
+      { stepNumber: 3, instruction: "Peneirar para a forma: Despeje o creme passando por uma peneira fina na forma caramelizada para eliminar bolhas de ar.", timerSeconds: 60, tip: "Peneirar o líquido garante um pudim sem furinhos, ultracremoso." },
+      { stepNumber: 4, instruction: "Banho-maria no forno: Cubra com papel alumínio e asse em banho-maria com água quente a 160°C por 50 minutos. Deixe gelar por 6 horas antes de desenformar." }
+    ],
+    chefTip: "O adoçante alulose carameliza quimicamente com a mesma cor e viscosidade do açúcar sem cristalizar ao gelar."
+  },
+  {
+    id: "kn-desserts-573",
+    title: "Brigadeiro Gourmet Nobre de Colher com Chocolate 70% e Manteiga",
+    description: "O brigadeiro perfeito de festa em versão cetogênica sedosa, feito com redução de nata, cacau nobre e enrolado em raspas de chocolate.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "brigadeiros",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Fácil",
+    prepTime: 5,
+    cookTime: 12,
+    servings: 4,
+    rating: 4.9,
+    reviewCount: 56,
+    isPremium: false,
+    tags: ["brigadeiro", "cacau", "chocolate 70%", "zero açúcar", "brasileiro"],
+    nutrition: { calories: 240, protein: 4, netCarbs: 2, fat: 24, fiber: 2, carbs: 4 },
+    ingredients: [
+      { id: "kn-de573-1", name: "Creme de leite fresco ou nata", amount: "200 g", quantity: 200, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de573-2", name: "Manteiga sem sal", amount: "20 g", quantity: 20, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de573-3", name: "Cacau em pó 100% alcalino holandês", amount: "2 colheres de sopa", quantity: 20, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de573-4", name: "Adoçante xilitol ou eritritol em pó", amount: "3 colheres de sopa", quantity: 35, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de573-5", name: "Chocolate 70% em raspas para finalizar", amount: "30 g", quantity: 30, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Misturar a frio: Em panela de fundo grosso, dissolva o cacau em pó na nata com o adoçante e a manteiga antes de ligar o fogo.", timerSeconds: 60 },
+      { stepNumber: 2, instruction: "Cozinhar em fogo baixo: Cozinhe mexendo continuamente com espátula de silicone por 10 a 12 minutos até soltar do fundo da panela.", timerSeconds: 660 },
+      { stepNumber: 3, instruction: "Esfriar: Transfira para um prato untado e cubra com filme plástico em contato.", timerSeconds: 60 },
+      { stepNumber: 4, instruction: "Servir ou enrolar: Sirva morno de colher ou enrole bolinhas passando nas raspas de chocolate 70%." }
+    ],
+    chefTip: "O cacau 100% alcalino garante cor escura brilhante e sabor suave sem a acidez excessiva do cacau comum."
+  },
+  {
+    id: "kn-desserts-574",
+    title: "Cheesecake Clássico New York com Calda Rústica de Frutas Vermelhas",
+    description: "Base crocante de farinha de amêndoas e manteiga com recheio cremoso e alto de cream cheese assado, coberto com coulis de amoras e framboesas.",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "tortas",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 18,
+    cookTime: 45,
+    servings: 8,
+    rating: 5.0,
+    reviewCount: 71,
+    isPremium: true,
+    tags: ["cheesecake", "frutas vermelhas", "cream cheese", "torta doce", "gourmet"],
+    nutrition: { calories: 340, protein: 8, netCarbs: 3, fat: 32, fiber: 2, carbs: 5 },
+    ingredients: [
+      { id: "kn-de574-1", name: "Farinha de amêndoas pura (base)", amount: "120 g", quantity: 120, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de574-2", name: "Manteiga derretida (base)", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de574-3", name: "Cream cheese tradicional em temperatura ambiente", amount: "450 g", quantity: 450, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de574-4", name: "Nata fresca e adoçante eritritol", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de574-5", name: "Ovos inteiros e baunilha", amount: "2 unidades", quantity: 2, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de574-6", name: "Frutas vermelhas congeladas (mirtilo, morango, framboesa) para a calda", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Vegetais" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Forrar o fundo: Misture a farinha de amêndoas e a manteiga. Pressione no fundo de forma de aro removível e pré-asse a 180°C por 8 minutos.", timerSeconds: 480 },
+      { stepNumber: 2, instruction: "Bater o creme de queijo: Bata o cream cheese com o eritritol, a nata, os ovos e a baunilha delicadamente sem incorporar ar demais.", timerSeconds: 180 },
+      { stepNumber: 3, instruction: "Assar no forno: Despeje sobre a base e asse a 150°C por 40 minutos até firmar nas bordas e o centro tremer suavemente. Deixe esfriar no forno desligado com a porta entreaberta.", timerSeconds: 2400 },
+      { stepNumber: 4, instruction: "Calda de frutas: Em uma panelinha, cozinhe as frutas vermelhas com 1 colher de eritritol por 5 minutos até virar uma calda espessa e cubra o cheesecake gelado." }
+    ],
+    chefTip: "Deixar o cheesecake esfriar dentro do forno desligado evita choque térmico e impede que a superfície rache."
+  },
+  {
+    id: "kn-desserts-575",
+    title: "Bolo de Cenoura Fofíssimo com Cobertura Espessa de Brigadeiro Cetogênico",
+    description: "Massa leve e fofa feita com cenoura ralada, farinha de amêndoas e ovos, coberta com calda brilhante de chocolate que endurece levemente.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "bolos",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 15,
+    cookTime: 30,
+    servings: 6,
+    rating: 4.9,
+    reviewCount: 65,
+    isPremium: false,
+    tags: ["bolo de cenoura", "brigadeiro", "farinha de amêndoas", "café da tarde", "brasileiro"],
+    nutrition: { calories: 310, protein: 9, netCarbs: 4, fat: 28, fiber: 3, carbs: 7 },
+    ingredients: [
+      { id: "kn-de575-1", name: "Cenoura ralada média", amount: "100 g (1 unidade)", quantity: 100, unit: "g", optional: false, category: "Vegetais" },
+      { id: "kn-de575-2", name: "Ovos caipiras inteiros", amount: "3 unidades", quantity: 3, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de575-3", name: "Farinha de amêndoas fina", amount: "120 g", quantity: 120, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de575-4", name: "Adoçante eritritol", amount: "60 g", quantity: 60, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de575-5", name: "Óleo de coco ou manteiga derretida", amount: "40 ml", quantity: 40, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-de575-6", name: "Fermento químico em pó", amount: "1 colher de sopa", quantity: 10, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de575-7", name: "Cacau em pó e nata para a cobertura", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Bater os líquidos: No liquidificador, bata a cenoura com os ovos, o óleo de coco e o eritritol até virar um creme laranja liso.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Misturar a farinha: Transfira para um bowl e incorpore a farinha de amêndoas e o fermento com um fouet.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Assar o bolo: Despeje em forma redonda untada e asse a 180°C por 28 a 30 minutos até dourar.", timerSeconds: 1800 },
+      { stepNumber: 4, instruction: "Cobertura de chocolate: Ferva a nata com cacau e manteiga por 3 minutos e despeje ainda quente sobre o bolo desenformado." }
+    ],
+    chefTip: "Não use cenoura em excesso para não elevar a umidade e os carboidratos da massa; 100g é o equilíbrio perfeito de cor e textura."
+  },
+  {
+    id: "kn-desserts-576",
+    title: "Torta Holandesa Cetogênica com Creme de Baunilha e Ganache Espelhada 70%",
+    description: "Crosta de amêndoas e cacau, recheio aveludado de creme diplomata cetogênico e cobertura brilhante de ganache meio amarga.",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "tortas",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 20,
+    cookTime: 10,
+    servings: 8,
+    rating: 5.0,
+    reviewCount: 49,
+    isPremium: true,
+    tags: ["torta holandesa", "ganache", "baunilha", "festa", "gelada"],
+    nutrition: { calories: 360, protein: 7, netCarbs: 3, fat: 35, fiber: 2, carbs: 5 },
+    ingredients: [
+      { id: "kn-de576-1", name: "Farinha de amêndoas e cacau (base)", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de576-2", name: "Manteiga derretida", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de576-3", name: "Cream cheese batido com nata e eritritol", amount: "300 g", quantity: 300, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de576-4", name: "Extrato puro de baunilha de madagascar", amount: "1 colher de chá", quantity: 5, unit: "ml", optional: false, category: "Temperos" },
+      { id: "kn-de576-5", name: "Chocolate 70% derretido com nata para ganache", amount: "120 g", quantity: 120, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Base de torta: Misture os ingredientes da base, forre o fundo da forma de aro removível e gele por 15 minutos.", timerSeconds: 900 },
+      { stepNumber: 2, instruction: "Creme aveludado: Bata o cream cheese com a nata gelada, baunilha e eritritol até ponto de creme espesso.", timerSeconds: 180 },
+      { stepNumber: 3, instruction: "Camada central: Espalhe o creme sobre a base e leve ao congelador por 30 minutos para firmar a superfície.", timerSeconds: 1800 },
+      { stepNumber: 4, instruction: "Ganache espelhada: Despeje a ganache morna de chocolate sobre o creme gelado e leve à geladeira por 4 horas antes de fatiar." }
+    ],
+    chefTip: "Use uma faca aquecida em água quente para fatiar a torta com cortes perfeitamente retos e limpos."
+  },
+  {
+    id: "kn-desserts-577",
+    title: "Sorvete Artesanal de Baunilha Real com Pedaços de Nozes Pecan e Nata",
+    description: "Sorvete ultracremoso sem cristais de gelo feito com fava de baunilha legítima, gemas pasteurizadas, nata e nozes pecã crocantes.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "sorvetes",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 15,
+    cookTime: 8,
+    servings: 4,
+    rating: 4.9,
+    reviewCount: 42,
+    isPremium: true,
+    tags: ["sorvete keto", "baunilha real", "nozes pecan", "nata", "refrescante"],
+    nutrition: { calories: 330, protein: 5, netCarbs: 2, fat: 33, fiber: 1, carbs: 3 },
+    ingredients: [
+      { id: "kn-de577-1", name: "Nata pura fresca gelada", amount: "300 g", quantity: 300, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de577-2", name: "Leite de amêndoas sem açúcar", amount: "100 ml", quantity: 100, unit: "ml", optional: false, category: "Despensa" },
+      { id: "kn-de577-3", name: "Adoçante alulose ou xilitol em pó", amount: "60 g", quantity: 60, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de577-4", name: "Gemas de ovos caipiras", amount: "3 unidades", quantity: 3, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de577-5", name: "Fava de baunilha raspada ou extrato concentrado", amount: "1 colher de chá", quantity: 5, unit: "g", optional: false, category: "Temperos" },
+      { id: "kn-de577-6", name: "Nozes pecã tostadas e picadas", amount: "50 g", quantity: 50, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Creme inglês: Aqueça o leite de amêndoas com a baunilha. Bata as gemas com o adoçante e incorpore ao leite aquecido em fogo brando até engrossar levemente sem ferver.", timerSeconds: 300 },
+      { stepNumber: 2, instruction: "Resfriar: Deixe o creme esfriar na geladeira.", timerSeconds: 600 },
+      { stepNumber: 3, instruction: "Bater com nata: Bata a nata em chantilly macio e envolva delicadamente o creme inglês frio e as nozes pecã.", timerSeconds: 120 },
+      { stepNumber: 4, instruction: "Congelar: Leve ao congelador em pote hermético mexendo a cada 40 minutos nas primeiras 2 horas para garantir cremosidade absoluta." }
+    ],
+    chefTip: "O adoçante alulose reduz o ponto de congelamento da calda, impedindo a formação de cristais de gelo rígidos no congelador."
+  },
+  {
+    id: "kn-desserts-578",
+    title: "Petit Gâteau Cetogênico com Recheio Cremoso e Chocolate Meio Amargo",
+    description: "Bolinho nobre assado em temperatura alta com casquinha firme por fora e recheio de calda quente de chocolate que escorre ao cortar.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "bolos",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 10,
+    cookTime: 7,
+    servings: 2,
+    rating: 5.0,
+    reviewCount: 68,
+    isPremium: true,
+    tags: ["petit gâteau", "chocolate quente", "vulcão", "alta gastronomia"],
+    nutrition: { calories: 340, protein: 7, netCarbs: 3, fat: 32, fiber: 3, carbs: 6 },
+    ingredients: [
+      { id: "kn-de578-1", name: "Chocolate 80% cacau nobre", amount: "80 g", quantity: 80, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de578-2", name: "Manteiga sem sal de qualidade", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de578-3", name: "Ovo inteiro mais 1 gema", amount: "2 unidades", quantity: 2, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de578-4", name: "Adoçante eritritol em pó fino", amount: "2 colheres de sopa", quantity: 25, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de578-5", name: "Farinha de amêndoas", amount: "1 colher de sopa cheia", quantity: 15, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Derreter chocolate e manteiga: Derreta o chocolate com a manteiga em banho-maria até ficar sedoso.", timerSeconds: 120 },
+      { stepNumber: 2, instruction: "Bater os ovos: Em outro bowl, bata o ovo, a gema e o eritritol com fouet por 1 minuto até espumar levemente.", timerSeconds: 60 },
+      { stepNumber: 3, instruction: "Unir os ingredientes: Misture o chocolate derretido aos ovos e adicione a colher de farinha de amêndoas.", timerSeconds: 60 },
+      { stepNumber: 4, instruction: "Assar em alta temperatura: Despeje em 2 ramequins untados com manteiga e cacau. Asse a 220°C por exatamente 6 a 7 minutos. O topo deve estar firme e o centro mole.", timerSeconds: 420 }
+    ],
+    chefTip: "O tempo de forno é cirúrgico: 7 minutos a 220°C. Nem um minuto a mais para não cozinhar a calda interna."
+  },
+  {
+    id: "kn-desserts-579",
+    title: "Beijinho de Coco Fresco Cetogênico com Cravo-da-Índia e Manteiga",
+    description: "Docinho tradicional de festa em versão sem açúcar refinado, feito com coco ralado fresco seco e cozido na nata até desprender da panela.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "brigadeiros",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Fácil",
+    prepTime: 8,
+    cookTime: 10,
+    servings: 4,
+    rating: 4.8,
+    reviewCount: 37,
+    isPremium: false,
+    tags: ["beijinho", "coco", "docinho", "sem açúcar", "festa"],
+    nutrition: { calories: 230, protein: 3, netCarbs: 1, fat: 24, fiber: 2, carbs: 3 },
+    ingredients: [
+      { id: "kn-de579-1", name: "Coco seco ralado fino sem açúcar", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de579-2", name: "Nata fresca pura", amount: "150 g", quantity: 150, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de579-3", name: "Manteiga sem sal", amount: "20 g", quantity: 20, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de579-4", name: "Adoçante eritritol ou xilitol", amount: "3 colheres de sopa", quantity: 35, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de579-5", name: "Cravos-da-índia para decorar", amount: "12 unidades", quantity: 2, unit: "g", optional: false, category: "Temperos" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Misturar na panela: Coloque a nata, a manteiga, o eritritol e 100g do coco seco ralado na panela.", timerSeconds: 60 },
+      { stepNumber: 2, instruction: "Cozinhar até encorpar: Cozinhe em fogo brando mexendo continuamente por 8 a 10 minutos até a massa engrossar e soltar das laterais.", timerSeconds: 540 },
+      { stepNumber: 3, instruction: "Esfriar: Transfira para um prato untado e espere esfriar por completo.", timerSeconds: 300 },
+      { stepNumber: 4, instruction: "Bolear: Unte as mãos com manteiga, modele os docinhos, passe no restante do coco ralado e espete um cravo-da-índia no topo." }
+    ],
+    chefTip: "Usar coco ralado sem açúcar de boa qualidade confere a umidade e crocância perfeita aos docinhos sem ressecar."
+  },
+  {
+    id: "kn-desserts-580",
+    title: "Torta Cremosa de Limão Siciliano com Base de Nozes e Merengue Suíço Maçaricado",
+    description: "Torta refrescante com creme cítrico de limão siciliano aveludado com gemas e manteiga, coberta por merengue dourado na chama.",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+    category: "desserts",
+    subcategory: "tortas",
+    categoryName: "Sobremesas Cetogênicas",
+    difficulty: "Médio",
+    prepTime: 18,
+    cookTime: 15,
+    servings: 6,
+    rating: 5.0,
+    reviewCount: 54,
+    isPremium: true,
+    tags: ["torta de limão", "merengue", "limão siciliano", "cítrico", "alta confeitaria"],
+    nutrition: { calories: 310, protein: 7, netCarbs: 3, fat: 29, fiber: 2, carbs: 5 },
+    ingredients: [
+      { id: "kn-de580-1", name: "Farinha de nozes ou castanhas (base)", amount: "120 g", quantity: 120, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de580-2", name: "Manteiga derretida", amount: "40 g", quantity: 40, unit: "g", optional: false, category: "Despensa" },
+      { id: "kn-de580-3", name: "Suco e raspas de 2 limões sicilianos", amount: "50 ml", quantity: 50, unit: "ml", optional: false, category: "Vegetais" },
+      { id: "kn-de580-4", name: "Gemas caipiras e nata para o curd", amount: "100 g", quantity: 100, unit: "g", optional: false, category: "Laticínios" },
+      { id: "kn-de580-5", name: "Claras de ovos com adoçante para o merengue", amount: "2 unidades", quantity: 2, unit: "unidade", optional: false, category: "Proteínas" },
+      { id: "kn-de580-6", name: "Adoçante eritritol", amount: "50 g", quantity: 50, unit: "g", optional: false, category: "Despensa" }
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Base crocante: Misture a farinha de nozes com a manteiga, aperte na forma canelada e asse a 180°C por 10 minutos.", timerSeconds: 600 },
+      { stepNumber: 2, instruction: "Curd de limão: Em banho-maria, mexa as gemas com o suco de limão, o eritritol e a manteiga com fouet até virar um creme espesso aveludado.", timerSeconds: 360 },
+      { stepNumber: 3, instruction: "Rechear a torta: Verta o curd quente sobre a base assada e leve à geladeira por 1 hora.", timerSeconds: 3600 },
+      { stepNumber: 4, instruction: "Merengue maçaricado: Bata as claras com eritritol em neve brilhante, cubra a torta com bico de confeitar e doure com maçarico culinário." }
+    ],
+    chefTip: "O curd feito em banho-maria lento adquire brilho de espelho e consistência cremosa sem talhar as gemas."
+  }
+];

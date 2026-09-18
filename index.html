@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#123D24" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>KetoNobre - Receitas que Transformam</title>
+    <meta name="description" content="Aplicativo premium de receitas cetogênicas, planejamento semanal, lista de compras inteligente e modo cozinheiro interativo." />
+    <meta property="og:title" content="KetoNobre - Receitas que Transformam" />
+    <meta property="og:description" content="Aplicativo premium de receitas cetogênicas, planejamento semanal, lista de compras inteligente e modo cozinheiro interativo." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN as requested -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              display: ['"Outfit"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                primary: '#123D24',
+                'primary-dark': '#082817',
+                accent: '#63B532',
+                'accent-light': '#A8D94D',
+                bg: '#F5F7F1',
+                surface: '#FFFFFF',
+                text: '#172019',
+                muted: '#6D756D',
+                border: '#DDE5D9',
+                // Dark mode palette
+                'dark-bg': '#071A0E',
+                'dark-surface': '#0D2817',
+                'dark-card': '#11331F',
+                'dark-border': '#1B472C',
+                'dark-text': '#F5F8F2',
+                'dark-muted': '#8EA092',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar hiding utility & smooth transitions */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#071A0E] text-[#F5F8F2] antialiased selection:bg-[#63B532] selection:text-[#082817]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
